@@ -1,0 +1,39 @@
+Put your answers to the debugging questions from Problem One in this file.
+
+Q1:
+
+局部变量
+        finish	'C' 	67    	0x43	char
+        numDisks	5	int
+        start	'A' 	65    	0x41	char
+        temp	'B' 	66    	0x42	char
+        totalMoves	444	int
+
+Q2:
+
+1  solveTowersOfHanoi                                                                                                                           TowersOfHanoi.cpp    31  0x7ff714ec94b3
+2  makeTheMagicHappen                                                                                                                           TowersOfHanoiGUI.cpp 393 0x7ff714ed9dcb
+3  (anonymous namespace)::TowersOfHanoiGUI::actionPerformed                                                                                     TowersOfHanoiGUI.cpp 405 0x7ff714ed9e3c
+4  MiniGUI::Detail::graphicsMain(std::function<void ()>)                                                                                        GUIMain.cpp          126 0x7ff714ef5246
+5  studentMain                                                                                                                                  Core.cpp             413 0x7ff714eee9b4
+
+Q3:
+
+31 times.
+
+Q4:
+
+15 times.
+
+Q5:
+
+aa
+
+Q6:
+
+the input parameter in line 41
+'='
+
+Q7:
+
+The '=' in line 41 modify the local string <chosen> so that the for-loop call permutationsRec recursively with different state argument <chosen>.
