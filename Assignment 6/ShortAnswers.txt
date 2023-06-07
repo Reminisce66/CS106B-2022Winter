@@ -1,0 +1,112 @@
+Q1:
+
+Windows.
+
+Q2:
+
+        elems	<10 项>	DataPoint*
+                [0]	@0x20a5758d0b8	DataPoint
+                        _initializationFlag	14199967989467109914	uint64_t
+                        name	""	std::string
+                        weight	137.0	double
+                [1]	@0x20a5758d0e8	DataPoint
+                        _initializationFlag	14199967989467109914	uint64_t
+                        name	""	std::string
+                        weight	-4.8366978272229995e-26	double
+                [2]	@0x20a5758d118	DataPoint
+                        _initializationFlag	14199967989467109914	uint64_t
+                        name	""	std::string
+                        weight	-4.8366978272229995e-26	double
+                [3]	@0x20a5758d148	DataPoint
+                        _initializationFlag	13451671603782742029	uint64_t
+                        name	<无法访问>	std::string
+                        weight	-4.8366978272229995e-26	double
+                [4]	@0x20a5758d178	DataPoint
+                        _initializationFlag	18369900232523579118	uint64_t
+                        name	<无法访问>	std::string
+                        weight	0.0	double
+                [5]	@0x20a5758d1a8	DataPoint
+                        _initializationFlag	18369900232523579118	uint64_t
+                        name	<无法访问>	std::string
+                        weight	-2.6569842580370804e+303	double
+                [6]	@0x20a5758d1d8	DataPoint
+                        _initializationFlag	18369900232523579118	uint64_t
+                        name	<无法访问>	std::string
+                        weight	-2.6569842580370804e+303	double
+                [7]	@0x20a5758d208	DataPoint
+                        _initializationFlag	18369900232523579118	uint64_t
+                        name	<无法访问>	std::string
+                        weight	-2.6569842580370804e+303	double
+                [8]	@0x20a5758d238	DataPoint
+                        _initializationFlag	18369900232523579118	uint64_t
+                        name	<无法访问>	std::string
+                        weight	-2.6569842580370804e+303	double
+                [9]	@0x20a5758d268	DataPoint
+                        _initializationFlag	18369900232523579118	uint64_t
+                        name	<无法访问>	std::string
+                        weight	-2.6569842580370804e+303	double
+
+Q3:
+
+
+          Jackie
+           1951
+        /        \
+      Tito    Jermaine
+     1953       1954
+    /    \
+Michael  Marlon
+ 1958     1957
+
+
+           Jackie
+            1951
+          /     \
+     Jermaine    Tito
+      1954      1953
+     /    \
+ Marlon  Michael
+  1957      1958
+
+
+            Jackie
+             1951
+           /     \
+        Tito    Marlon
+        1953     1957
+       /    \
+ Jermaine  Michael
+  1954      1958
+
+Q4:
+
+                                       { "T", 1 }
+                               /                        \
+                    { "B", 3 }		                  { "G", 2 }
+                   /          \                          /          \
+          { "S", 6 }	      { "A", 5 }	{ "V", 9 }	    { "R", 4 }
+         /          \
+{ "O", 8 }	    { "K", 7 }
+
+Q5:
+
+                                       { "G", 2 }
+                               /                        \
+                    { "B", 3 }		                  { "R", 4 }
+                   /          \                          /          \
+          { "S", 6 }	      { "A", 5 }	{ "V", 9 }	    { "K", 7 }
+         /
+{ "O", 8 }
+
+Q6:
+
+_______{ "G", 2 }{ "B", 3 }{ "R", 4 }{ "S", 6 }{ "A", 5 }{ "V", 9 }{ "K", 7 }{ "O", 8 }
+
+
+Q7:
+
+Yes.
+
+Q8:
+
+Yes.
