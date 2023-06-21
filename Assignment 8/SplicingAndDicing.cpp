@@ -9,8 +9,16 @@ using namespace std;
  * (e.g. Vector, HashSet, etc.).
  */
 void deleteNucleotides(Nucleotide* dna) {
-    /* TODO: Delete this comment and the next line and implement this function. */
-    (void) dna;
+    /* TODO: Delete this comment and the next line and implement this function.
+     * (void) dna;
+     */
+    while (dna != nullptr) {
+        Nucleotide* tmp = dna->next;
+        delete dna;
+        dna = tmp;
+    }
+
+    return;
 }
 
 /**
@@ -21,9 +29,18 @@ void deleteNucleotides(Nucleotide* dna) {
  * (e.g. Vector, HashSet, etc.).
  */
 string fromDNA(Nucleotide* dna) {
-    /* TODO: Delete this comment and the next lines and implement this function. */
-    (void) dna;
-    return "";
+    /* TODO: Delete this comment and the next lines and implement this function.
+     * (void) dna;
+     * return "";
+     */
+    string ans;
+
+    while (dna != nullptr) {
+        ans += dna->value;
+        dna = dna->next;
+    }
+
+    return ans;
 }
 
 /**
@@ -34,9 +51,21 @@ string fromDNA(Nucleotide* dna) {
  * (e.g. Vector, HashSet, etc.).
  */
 Nucleotide* toStrand(const string& str) {
-    /* TODO: Delete this comment and the next lines and implement this function. */
-    (void) str;
-    return nullptr;
+    /* TODO: Delete this comment and the next lines and implement this function.
+     * (void) str;
+     * return nullptr;
+     */
+    if (str.empty()) return nullptr;
+
+    Nucleotide* ans = new Nucleotide{str[0], nullptr, nullptr};
+    Nucleotide* n = ans;
+
+    for (int i=1; i<str.size(); ++i) {
+        n->next = new Nucleotide{str[i], nullptr, n};
+        n = n->next;
+    }
+
+    return ans;
 }
 
 /**
@@ -49,9 +78,25 @@ Nucleotide* toStrand(const string& str) {
  * This function should not use any containers (e.g. Vector, HashSet, etc.)
  */
 Nucleotide* findFirst(Nucleotide* dna, Nucleotide* target) {
-    /* TODO: Delete this comment and the next lines and implement this function. */
-    (void) dna;
-    (void) target;
+    /* TODO: Delete this comment and the next lines and implement this function.
+     * (void) dna;
+     * (void) target;
+     * return nullptr;
+     */
+
+    if (target == nullptr) return dna;
+    while (dna != nullptr) {
+        Nucleotide* tmp_dna = dna;
+        Nucleotide* tmp_target = target;
+        while (tmp_dna!=nullptr && tmp_target!=nullptr && tmp_dna->value == tmp_target->value) {
+            tmp_dna = tmp_dna->next;
+            tmp_target = tmp_target->next;
+        }
+        if (tmp_target == nullptr) return dna;
+        if (tmp_dna == nullptr) return nullptr;
+        dna = dna->next;
+    }
+
     return nullptr;
 }
 
@@ -67,10 +112,35 @@ Nucleotide* findFirst(Nucleotide* dna, Nucleotide* target) {
  * This function should not use any containers (e.g. Vector, HashSet, etc.)
  */
 bool spliceFirst(Nucleotide*& dna, Nucleotide* target) {
-    /* TODO: Delete this comment and the next lines and implement this function. */
-    (void) dna;
-    (void) target;
-    return false;
+    /* TODO: Delete this comment and the next lines and implement this function.
+     * (void) dna;
+     * (void) target;
+     * return false;
+     */
+
+    if (target == nullptr) return true;
+
+    Nucleotide* matched_head = findFirst(dna, target);
+    if (matched_head == nullptr) return false;
+    Nucleotide* matched_tail = matched_head;
+    while (target->next != nullptr) {
+        matched_tail = matched_tail->next;
+        target = target->next;
+    }
+    if (matched_head->prev == nullptr) {
+        dna = matched_tail->next;
+        matched_tail->next = nullptr;
+        if (dna != nullptr) dna->prev = nullptr;
+        deleteNucleotides(matched_head);
+    } else {
+        matched_head->prev->next = matched_tail->next;
+        if (matched_tail->next != nullptr) matched_tail->next->prev = matched_head->prev;
+        matched_head->prev = nullptr;
+        matched_tail->next = nullptr;
+        deleteNucleotides(matched_head);
+    }
+
+    return true;
 }
 
 
